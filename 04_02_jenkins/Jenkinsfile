@@ -75,7 +75,8 @@ node {
         }
     }
     stage('Destroy'){
-        input 'Destroy?'
+        // Uncomment the line below if you want to be promted whether to destroy or not
+        //input 'Destroy?'
         withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'), 
                         string(credentialsId: 'AWS_SECRET_KEY', variable: 'aws_secret_key')]) {
             dir('03_02-03_remotestate') {
